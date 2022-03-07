@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+    <div class="contenedor">
+        <table>
+            <thead>
+                <tr class="text-center">
+                    <th>nombre</th>
+                    <th>presentacion</th>
+
+                    <th>Codigo de Barra</th>
+                    <th>fecha de Baja</th>
+
+                    <th></th>
+                    <th><button (click)="Nuevo()" class="btn btn-success   ">Nuevo</button></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of productos" class="text-center">
+                    <th>{{producto.nombre}}</th>
+
+                    <th>{{producto.presentacion}}</th>
+
+                    <th>{{producto.codigoBarra}}</th>
+                    <th>{{producto.fechaBaja}}</th>
+
+                    <th>
+                        <button (click)="Editar(producto)" class="btn btn-warning  btn-sm">Editar</button></th>
+
+                    <th>
+                        <button class="btn btn-danger btn-sm " *ngIf="isAdmin">Eliminar</button>
+
+                    </th>
+            </tbody>
+        </table>
+    </div>
+</div>
+<th></th>
+<router-outlet></router-outlet>
